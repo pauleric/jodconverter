@@ -126,6 +126,7 @@ class ManagedOfficeProcess {
                 }
             }.execute(settings.getRetryInterval(), settings.getRetryTimeout());
         } catch (Exception exception) {
+            logger.info("connect to office server failed" + exception);
             throw new OfficeException("could not establish connection",
                     exception);
         }
